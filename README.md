@@ -1,5 +1,7 @@
 # Predicting Hospital Performance in California
 
+![Python](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white) ![R](https://img.shields.io/badge/R-4.3-276DC3?logo=r&logoColor=white) ![BigQuery](https://img.shields.io/badge/Google-BigQuery%20ML-4285F4?logo=googlecloud&logoColor=white) ![License](https://img.shields.io/github/license/PatelSahil-HDS/california-hospital-performance-analytics) ![Last Commit](https://img.shields.io/github/last-commit/PatelSahil-HDS/california-hospital-performance-analytics)
+
 This is the code, data, and write-up for a research project I did on hospital performance ratings in California. I used the 2016 Heart Failure inpatient cohort from the California Department of Health Care Access and Information (HCAI) — 137 hospitals, real public data, official OSHPD facility IDs — and fit both linear and logistic regression models to figure out what drives a hospital's quality rating.
 
 The paper (PDF + DOCX) is in this repo if you want the full write-up. Everything below is the short version.
