@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# R
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+*.Rproj.user/
+*.Rcheck/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data outputs (keep raw CSV; ignore large intermediates)
+data/processed/
+data/interim/
+*.parquet
+*.pkl
+*.joblib
+
+# Models
+models/
+*.h5
+*.pt
+*.pth
+
+# BI / Dashboards (binary working files)
+*.twb~
+*.pbix.bak
+
+# Numbers / Excel temp
+~$*.numbers
+~$*.xlsx
+~$*.docx
+.~lock.*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Credentials
+.env
+.env.local
+*.json.key
+gcp-credentials*.json
+service-account*.json
+
+# Logs
+*.log
+logs/
