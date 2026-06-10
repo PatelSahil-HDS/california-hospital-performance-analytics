@@ -73,20 +73,28 @@ I'd rather be upfront about the limitations than oversell the results:
 
 ## Repo layout
 
-Right now the repo just has the paper, the CSV, and this README. As I clean up and commit the analysis code, it'll look something like:
-
 ```
 .
 ├── data/
-│   └── California_Hospital_Real_Data.csv
-├── notebooks/          # Jupyter notebooks for EDA + modeling
+│   └── California_Hospital_Real_Data.csv     # raw HCAI export
 ├── scripts/
-│   ├── python/         # cleaning, feature engineering, models
-│   ├── r/              # equivalent models in R
-│   └── sql/            # BigQuery + BigQuery ML
-├── dashboards/         # Tableau, Power BI, Looker Studio
-└── paper/
-    └── Research_Paper_Hospital_Analytics.pdf
+│   ├── python/
+│   │   ├── 01_load_and_clean.py              # cleaning + feature engineering
+│   │   ├── 02_eda.py                         # plots + group summaries
+│   │   ├── 03_linear_regression.py           # OLS + 5-fold CV
+│   │   └── 04_logistic_regression.py         # L2 logit + AUC
+│   ├── r/
+│   │   ├── eda.R                             # ggplot mirror of EDA
+│   │   └── models.R                          # lm() + glm() mirror
+│   └── sql/
+│       ├── 01_create_feature_view.sql        # BigQuery feature view
+│       ├── 02_bqml_linear.sql                # BigQuery ML linear
+│       └── 03_bqml_logistic.sql              # BigQuery ML logistic
+├── paper/
+│   ├── Research_Paper_Hospital_Analytics.pdf
+│   └── Research_Paper_Hospital_Analytics.docx
+├── requirements.txt
+└── README.md
 ```
 
 ## Running it locally
@@ -97,14 +105,23 @@ cd california-hospital-performance-analytics
 
 python3 -m venv venv
 source venv/bin/activate
-pip install pandas scikit-learn matplotlib seaborn jupyter
+pip install -r requirements.txt
+
+python scripts/python/01_load_and_clean.py
+python scripts/python/02_eda.py
+python scripts/python/03_linear_regression.py
+python scripts/python/04_logistic_regression.py
 ```
 
 R side:
 
 ```r
-install.packages(c("tidyverse", "ggplot2", "caret", "pROC", "corrplot"))
+install.packages(c("tidyverse", "caret", "pROC", "corrplot"))
+Rscript scripts/r/eda.R
+Rscript scripts/r/models.R
 ```
+
+For the BigQuery side, edit `your_project.your_dataset` in the SQL files and run them in the BigQuery console.
 
 ## What's next
 

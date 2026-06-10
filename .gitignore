@@ -67,3 +67,5 @@ service-account*.json
 # Logs
 *.log
 logs/
+hospital_clean.csv
+figures/
