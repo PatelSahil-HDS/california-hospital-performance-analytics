@@ -7,6 +7,10 @@ The paper (PDF + DOCX) is in this repo if you want the full write-up. Everything
 **Author:** Sahil Patel, Dept. of Health Data Science, Saint Louis University
 **Contact:** patelsahils9099@gmail.com
 
+![Risk-Adjusted Mortality vs Performance Rating](figures/rate_vs_rating.png)
+
+*The headline relationship: higher risk-adjusted Heart Failure mortality reliably predicts a lower HCAI performance rating. This is the linear model's strongest signal (β = −8.75, the largest coefficient by a wide margin).*
+
 ---
 
 ## What I was trying to answer
@@ -41,6 +45,16 @@ After dropping statewide aggregate rows and hospitals with missing Heart Failure
 - `Hospital_Rating_Category` — Better / As Expected / Worse
 
 I picked Heart Failure as the index condition because it has the broadest hospital coverage in the HCAI registry — most facilities report it.
+
+### Distribution and group differences
+
+![Performance Rating by Hospital Type](figures/rating_by_type.png)
+
+Teaching hospitals come out clearly on top (mean 85.6 vs 71.5 General vs 69.3 Community), which is consistent with the broader literature on academic medical centers and complex conditions. With only 9 Teaching hospitals in the sample the confidence interval is wide, but the direction is unambiguous.
+
+![Correlation matrix](figures/correlation_matrix.png)
+
+None of the bivariate correlations are huge (|r| ≤ 0.42), which is honestly the most important plot in the paper — it tells you the outcome is multifactorial and a small feature set isn't going to nail it. That framing matters more than the R² number.
 
 ## What I used
 
