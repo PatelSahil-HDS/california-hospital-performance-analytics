@@ -4,10 +4,10 @@
 
 This is the code, data, and write-up for a research project I did on hospital performance ratings in California. I used the 2016 Heart Failure inpatient cohort from the California Department of Health Care Access and Information (HCAI) — 137 hospitals, real public data, official OSHPD facility IDs — and fit both linear and logistic regression models to figure out what drives a hospital's quality rating.
 
-The paper (PDF + DOCX) is in this repo if you want the full write-up. Everything below is the short version.
+📄 **[Read the full research paper →](paper/Research_Paper_Hospital_Analytics.pdf)** &nbsp;·&nbsp; 📝 **[Plain-English writeup →](BLOG_POST.md)** &nbsp;·&nbsp; 📊 **[Interactive Streamlit demo](app.py)** (run `streamlit run app.py`) &nbsp;·&nbsp; 📋 **[Data dictionary →](data/data-dictionary.md)**
 
 **Author:** Sahil Patel, Dept. of Health Data Science, Saint Louis University
-**Contact:** patelsahils9099@gmail.com
+**Contact:** patelsahils9099@gmail.com &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/sahil-patel-hds)
 
 ![Risk-Adjusted Mortality vs Performance Rating](figures/rate_vs_rating.png)
 
@@ -128,6 +128,14 @@ python scripts/python/02_eda.py
 python scripts/python/03_linear_regression.py
 python scripts/python/04_logistic_regression.py
 ```
+
+Want to play with the model interactively?
+
+```bash
+streamlit run app.py
+```
+
+That launches a local web app where you can enter hospital characteristics and see the predicted rating + High Performer probability in real time, plotted against the 137 real hospitals.
 
 R side:
 
